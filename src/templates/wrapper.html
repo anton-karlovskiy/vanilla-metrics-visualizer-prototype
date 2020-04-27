@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>News</title>
+  <title>Metrics Visualizer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <link rel="stylesheet" href="/style/main.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.0.0-alpha/quicklink.umd.js"></script>
 </head>
 <body>
   <header>
@@ -17,6 +16,7 @@
       <li class="profile-icon"><img src="https://cdn.glitch.com/2feb9fb8-169d-4ea0-9d82-ece1d1199861/icon.svg?v=1560086780686" alt="profile icon" /></li>
     </ul>
   </header>
+
   {% block body %}
   {% endblock %}
   
@@ -27,9 +27,6 @@
     <a href="#" class="footer-link">Digg</a>
   </footer>
   <script>
-    window.addEventListener('load', () => {
-      quicklink.listen();
-    });
   </script>
 </body>
 </html>
