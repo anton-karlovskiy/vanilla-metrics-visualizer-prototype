@@ -4,27 +4,42 @@
   <meta charset="utf-8">
   <title>Metrics Visualizer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <!-- TODO: critical and non-critical css for render blocking resources -->
   <link rel="stylesheet" href="/style/main.css" />
 </head>
 <body>
   <header>
-    <ul class="navbar">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/pages/world.html">World</a></li>
-      <li><a href="/pages/tech.html">Tech</a></li>
-      <li><a href="/pages/contact.html">Contact</a></li>
-      <li class="profile-icon"><img src="https://cdn.glitch.com/2feb9fb8-169d-4ea0-9d82-ece1d1199861/icon.svg?v=1560086780686" alt="profile icon" /></li>
-    </ul>
+    <div class="product-name-wrapper">
+      <!-- TODO: nunjuck based variable -->
+      <a
+        href="https://metrics-visualizer"
+        class="product-name-link"
+        data-label="Project Logo (header)">
+        <img
+          src="https://www.gstatic.com/images/icons/material/product/2x/pagespeed_64dp.png"
+          class="product-logo"
+          alt="PageSpeed Metrics Visualizer">
+      </a>
+      <!-- TODO: nunjuck based variable -->
+      <a
+        href="https://metrics-visualizer"
+        class="product-name"
+        data-label="Upper Header">
+        Metrics Visualizer
+      </a>
+    </div>
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/docs.html">Docs</a></li>
+      </ul>
+    </nav>
   </header>
 
   {% block body %}
   {% endblock %}
   
   <footer>
-    <a href="#" class="footer-link">Twitter</a>
-    <a href="#" class="footer-link">Facebook</a>
-    <a href="#" class="footer-link">Google+</a>
-    <a href="#" class="footer-link">Digg</a>
   </footer>
   <script>
   </script>
