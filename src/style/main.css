@@ -26,6 +26,15 @@
   --typography-font-weight-bold: 700;
 }
 
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
 input[type="text"],
 input[type="date"],
 input[type="datetime"],
@@ -96,6 +105,41 @@ body {
   min-height: 100vh;
   text-align: center;
   background-color: var(--palette-bg-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: var(--typography-font-weight-regular);
+  color: var(--palette-text-secondary);
+  text-decoration: none;
+}
+
+p {
+  margin: 0 auto 1em auto;
+  text-align: justify;
+}
+
+button {
+  color: var(--palette-text-primary);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: 2px;
+  height: 36px;
+  transition: background-color .2s, box-shadow .2s;
+  
+  /* truncate string with ellipsis */
+  min-width: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-size: var(--typography-button-font-size);
+  line-height: var(--typography-button-line-height);
+  letter-spacing: var(--typography-button-letter-spacing);
+  font-weight: var(--typography-font-weight-bold);
+  text-transform: uppercase;
 }
 
 header {
@@ -110,19 +154,19 @@ header {
   height: 48px;
 }
 
-.product-name-wrapper {
+.product-logo-title {
   display: flex;
   height: 36px;
   margin: 6px 0;
 }
 
-.product-name-link {
+.product-link {
   opacity: 1;
   transition: opacity .2s;
 }
 
-.product-name-link:hover,
-.product-name-link:focus {
+.product-link:hover,
+.product-link:focus {
   opacity: .7;
   text-decoration: none;
 }
@@ -134,15 +178,15 @@ header {
   width: 32px;
 }
 
-.product-name {
+.product-title {
   color: var(--palette-text-secondary);
   font-size: 20px;
   line-height: 36px;
   white-space: nowrap;
 }
 
-.product-name:hover,
-.product-name:focus {
+.product-title:hover,
+.product-title:focus {
   color: var(--palette-text-primary);
   transition: color .2s;
 }
@@ -187,47 +231,10 @@ footer {
   align-items: center;
 }
 
-a {
-  font-weight: var(--typography-font-weight-regular);
-  color: var(--palette-text-secondary);
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-p {
-  margin: 0 auto 1em auto;
-  text-align: justify;
-}
-
 main {
   width: 100%;
   padding-bottom: 50px;
   margin-top: 48px;
-}
-
-button {
-  color: var(--palette-text-primary);
-  cursor: pointer;
-  outline: 0;
-  border: 0;
-  border-radius: 2px;
-  height: 36px;
-  transition: background-color .2s, box-shadow .2s;
-  
-  /* truncate string with ellipsis */
-  min-width: 36px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  font-size: var(--typography-button-font-size);
-  line-height: var(--typography-button-line-height);
-  letter-spacing: var(--typography-button-letter-spacing);
-  font-weight: var(--typography-font-weight-bold);
-  text-transform: uppercase;
 }
 
 .main-action {
