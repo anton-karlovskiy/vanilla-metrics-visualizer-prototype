@@ -36,8 +36,8 @@ const html = () => {
   return gulp.src('src/**/*.html')
     .pipe(nunjucks({path: 'src'}))
     .pipe(gulp.dest('build'));
-}
-gulp.task('html', html)
+};
+gulp.task('html', html);
 
 // This is the app's build process
 const build = gulp.series('clean', 'copy', 'html');
