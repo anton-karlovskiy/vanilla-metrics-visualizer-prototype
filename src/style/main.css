@@ -127,16 +127,16 @@ button {
   border: 0;
   border-radius: 2px;
   height: 36px;
+  user-select: none;
   transition: background-color .2s, box-shadow .2s;
   
   /* truncate string with ellipsis */
-  min-width: 36px;
+  min-width: 64px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
   font-size: var(--typography-button-font-size);
-  line-height: var(--typography-button-line-height);
   letter-spacing: var(--typography-button-letter-spacing);
   font-weight: var(--typography-font-weight-bold);
   text-transform: uppercase;
@@ -223,9 +223,10 @@ nav.navbar > ul > li > a {
 footer {
   position: absolute;
   bottom: 0;
-  text-align: center;
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 50px;
+  text-align: center;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -237,30 +238,31 @@ main {
   margin-top: 48px;
 }
 
-.main-action {
+.psi-action {
   padding: 48px 0 24px;
   background-color: var(--palette-bg-paper);
   box-shadow: var(--shadows-4);
 }
 
-.main-action div.url-and-analyze {
+.psi-action .url-and-analyze {
   display: flex;
   justify-content: center;
 }
 
-.main-action input[name=url] {
+.psi-action input[id=url] {
   border: none;
   padding: 0 16px;
-  font-size: 14px;
+  font-size: var(--typography-body2-font-size);
+  line-height: var(--typography-body2-line-height);
+  letter-spacing: var(--typography-body2-letter-spacing);
   height: auto;
   width: 40%;
 }
 
 .analyze-submit {
-  padding: 8px 16px;
+  padding: 6px 16px;
   margin-left: 8px;
   min-width: 96px;
-  box-shadow: none;
   background-color: var(--palette-grey-500);
 }
 

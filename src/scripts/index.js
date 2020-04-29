@@ -1,10 +1,11 @@
 // ray test touch <
 const url = 'https://wordpress.org';
-const apiCall = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&strategy=mobile`;
+const stragegy = 'mobile';
+const psiEndpoint = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&strategy=${stragegy}`;
 
 const getPerformanceMetrics = async () => {
   console.log('[getPerformanceMetrics] started...');
-  const response = await fetch(apiCall);
+  const response = await fetch(psiEndpoint);
   const responseJson = await response.json();
   // Lab metrics
   const lighthouse = responseJson.lighthouseResult;
