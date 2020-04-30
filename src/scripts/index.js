@@ -10,7 +10,7 @@ const getPerformanceMetrics = async () => {
   // Lab metrics
   const lighthouse = responseJson.lighthouseResult;
   // TODO: constants
-  const lighthouseMetrics = {
+  const metrics = {
     'First Byte': lighthouse.audits['time-to-first-byte'].displayValue,
     'First Contentful Paint': lighthouse.audits['first-contentful-paint'].displayValue,
     'First Input Delay': lighthouse.audits['max-potential-fid'].displayValue,
@@ -18,19 +18,20 @@ const getPerformanceMetrics = async () => {
     'Time To Interactive': lighthouse.audits['interactive'].displayValue
   };
 
-  let lighthouseScreenshots = [];
-  const screenshots = lighthouse.audits['screenshot-thumbnails'].details.items;
-  for (const screenshot of screenshots) {
-    const dimensions = await getImageDimensions(screenshot.data);
+  let items = [];
+  const screenshotDetails = lighthouse.audits['screenshot-thumbnails'].details;
+  for (const item of screenshotDetails.items) {
+    const dimensions = await getImageDimensions(item.data);
 
-    lighthouseScreenshots = [...lighthouseScreenshots, {
-      ...screenshot,
+    items = [...items, {
+      ...item,
       ...dimensions
     }];
   }
+  screenshotDetails.items = items;
 
   console.log('[getPerformanceMetrics] ended...');
-  console.log('ray : ***** lighthouseMetrics, lighthouseScreenshots => ', lighthouseMetrics, lighthouseScreenshots);
+  console.log('ray : ***** metrics, screenshotDetails => ', metrics, screenshotDetails);
 };
 
 const getImageDimensions = file => {

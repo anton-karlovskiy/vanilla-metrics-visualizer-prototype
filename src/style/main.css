@@ -271,18 +271,14 @@ main {
 }
 
 /* ray test touch < */
-.screenshots {
+.filmstrips {
   display: flex;
   justify-content: center;
   margin: 120px 0;
 }
 
-.screenshots > div {
+.filmstrips > div {
   display: inline-flex;
   padding: 4px;
-}
-
-.screenshots > div:last-child {
-  margin-right: 0;
 }
 /* ray test touch > */
